@@ -12,13 +12,13 @@ Helpful links:
 The easiest way try out the CLI is using `npx`:
 
 ```
-$ npx george-cli george myfile.grg
+$ npx george-cli myfile.grg
 ```
 
 The CLI supports multiple files, so you can check multiple files at once:
 
 ```
-$ npx george-cli george *.grg
+$ npx george-cli *.grg
 ```
 
 ### Recommended Workflow
