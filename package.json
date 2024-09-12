@@ -1,0 +1,27 @@
+{
+  "name": "george-cli",
+  "version": "0.0.1",
+  "description": "CLI for George (UW SE212)",
+  "main": "lib/index.js",
+  "bin": {
+    "george": "./bin/george.js"
+  },
+  "scripts": {
+    "test": "node ./test"
+  },
+  "keywords": [
+    "george",
+    "se212",
+    "waterloo",
+    "uwaterloo",
+    "george-cli",
+    "uw",
+    "university of waterloo"
+  ],
+  "author": "Philip Scott",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philipjscott/george-cli.git"
+  }
+}
