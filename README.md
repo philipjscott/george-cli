@@ -23,9 +23,24 @@ The CLI can check multiple files at once:
 $ npx george-cli *.grg
 ```
 
+When used in combination with a clipboard tool like `pbcopy` or `xclip`, it becomes really easy to share the analysis of **all** your `.grg` files with your classmates:
+
+```bash
+$ npx george-cli *.grg | pbcopy # Copy to clipboard on Mac
+$ npx george-cli *.grg | xclip -selection clipboard # Copy to clipboard on Linux, I'd recommend creating an alias
+```
+
+You can also watch for file changes to get feedback from George as you edit the file:
+
+```bash
+$ npx george-cli --watch *.grg
+```
+
 ## Recommended Workflow
 
-For your SE212 assignments I recommend you save your work in a private git repository. You can create an npm project and install the CLI locally and make `npm run test` test all your `.grg` files:
+For your SE212 assignments I recommend you save your work in a **private** git repository.
+You can create an npm project and install the CLI locally and make `npm run test` test all your `.grg` files.
+When editing files in an editor (e.g. VSCode), you make `npm run watch` script and run that in your editor's terminal while you edit your files.
 
 ```bash
 $ npm init -y
@@ -38,7 +53,8 @@ $ cat package.json
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx george *.grg"
+    "test": "npx george *.grg",
+    "watch": "npx george --watch *.grg"
   },
   "keywords": [],
   "author": "",
@@ -48,10 +64,12 @@ $ cat package.json
     "george-cli": "^0.0.1"
   }
 }
-$ npm run test
+$ npm run watch
 ```
 
-Alternatively, you can install the CLI globally:
+## Global Installation
+
+While not recommended for versioning reasons, you can install `george-cli` globally:
 
 ```bash
 $ npm install --global george-cli
